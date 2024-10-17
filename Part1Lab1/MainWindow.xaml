@@ -1,0 +1,22 @@
+﻿<Window x:Class="Lab1Ex1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab1Ex1"
+        mc:Ignorable="d"
+        Title="Фокус со словами" Height="600" Width="800" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+
+        <TextBox x:Name="leftTextBox" Height="46" Margin="76,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Width="185" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+
+        <Button x:Name="reverseLine" Content="->" Margin="348,0,348,0" Height="36" Click="Button_Click" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="rightTextBox" Height="45" Margin="540,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Width="208" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Grid.ColumnSpan="2" />
+
+    </Grid>
+</Window>

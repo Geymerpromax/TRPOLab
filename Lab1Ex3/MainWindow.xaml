@@ -1,0 +1,40 @@
+﻿<Window x:Class="Lab1Ex3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab1Ex3"
+        mc:Ignorable="d"
+        Title="Миникалкулятор" Height="200" Width="600" ResizeMode="NoResize">
+    
+        <StackPanel Orientation="Horizontal">
+            <StackPanel x:Name="leftStack" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200">
+                <Label Content="Первое число(целое):"/>
+                <TextBox x:Name="firstNumField"/>
+                <Label Content="Второе число(целое):"/>
+                <TextBox x:Name="secondNumField"/>
+            </StackPanel>
+            <StackPanel x:Name="centreStack" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200">
+                <Button Content="->" Width="20" Height="20" Margin="5,5,5,5" Click="CreateResult"/>
+            </StackPanel>
+            <StackPanel x:Name="rightStack" Orientation="Vertical" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel Orientation="Horizontal" Margin="1,1,1,1">
+                    <Label Content="Сумма: "/>
+                <Label x:Name="summ" Content="0" BorderBrush="Black" BorderThickness="1,1,1,1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="1,0,1,0">
+                    <Label Content="Разность: "/>
+                    <Label x:Name="raznost" Content="0" BorderBrush="Black" BorderThickness="1,1,1,1"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="1,1,1,0">
+                    <Label Content="Произведение: "/>
+                    <Label x:Name="proiz" Content="0" BorderThickness="1,1,1,1" BorderBrush="Black"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="1,1,1,1">
+                    <Label Content="Часное: "/>
+                    <Label x:Name="chastnoe" Content="0" BorderThickness="1,1,1,1" BorderBrush="Black"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    
+</Window>

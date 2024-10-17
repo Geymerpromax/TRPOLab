@@ -1,0 +1,121 @@
+﻿<Window x:Name="window" x:Class="Lab2Ex2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab2Ex2"
+        mc:Ignorable="d"
+        Title="Минипланировщик" Height="500" Width="800" ResizeMode="NoResize">
+    <StackPanel x:Name="mainStack" Orientation="Horizontal">
+        <StackPanel x:Name="mainCalendar" Orientation="Vertical" Width="400">
+            <TextBox Text="time" Height="30" Width="400"/>
+            <StackPanel x:Name="month" Orientation="Horizontal" HorizontalAlignment="Center" Width="400" Background="#FF6877D7">
+                <Button x:Name="monthLeft" Content="&lt;-" HorizontalContentAlignment="Center" Margin="2,2,30,3" BorderThickness="1,1,1,1" Width="30" Height="30"/>
+                <ComboBox x:Name="monthList" SelectedIndex="0" Width="80" Margin="67,0,0,0" Height="30">
+                    <ComboBoxItem Content="Январь"/>
+                    <ComboBoxItem Content="Февраль"/>
+                    <ComboBoxItem Content="Март"/>
+                    <ComboBoxItem Content="Апрель"/>
+                    <ComboBoxItem Content="Май"/>
+                    <ComboBoxItem Content="Июнь"/>
+                    <ComboBoxItem Content="Июль"/>
+                    <ComboBoxItem Content="Август"/>
+                    <ComboBoxItem Content="Сентябрь"/>
+                    <ComboBoxItem Content="Октябрь"/>
+                    <ComboBoxItem Content="Ноябрь"/>
+                    <ComboBoxItem Content="Декабрь"/>
+                </ComboBox>
+                <ComboBox x:Name="yearList" IsReadOnly="True" SelectedIndex="1" Width="60" Height="30">
+                    <ComboBoxItem Content="2024"/>
+                    <ComboBoxItem Content="2023"/>
+                    <ComboBoxItem Content="2022"/>
+                </ComboBox>
+                <Button x:Name="monthRight" Content="->" HorizontalAlignment="Right" Width="30" Height="30" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="1,1,1,1" ScrollViewer.CanContentScroll="True" Margin="99,2,2,2"/>
+            </StackPanel>
+            <StackPanel x:Name="calendarsDay" Orientation="Vertical">
+                <StackPanel x:Name="firstColumn" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Label Width="40" Height="40" Content="Пн" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Label Width="40" Height="40" Content="Вт" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Label Width="40" Height="40" Content="Ср" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Label Width="40" Height="40" Content="Чт" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Label Width="40" Height="40" Content="Пт" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Label Width="40" Height="40" Content="Сб" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Label Width="40" Height="40" Content="Вс" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+
+                </StackPanel>
+                <StackPanel x:Name="secondColumn" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+
+                </StackPanel>
+                <StackPanel x:Name="thirdColumn" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+
+                </StackPanel>
+                <StackPanel x:Name="fourthColumn" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+
+                </StackPanel>
+                <StackPanel x:Name="fifthColumn" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+
+                </StackPanel>
+                <StackPanel x:Name="sixthColumn" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+
+                </StackPanel>
+                <StackPanel x:Name="seventhColumn" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+                    <Button Width="40" Height="40" Content="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Margin="2.5,5,2.5,5"/>
+
+                </StackPanel>
+            </StackPanel>
+            <TextBox Text="Текст события" Margin="0,5,0,5"/>
+            <Button Content="Создать" Margin="0,5,0,0"/>
+        </StackPanel>
+        <StackPanel x:Name="event">
+
+        </StackPanel>
+    </StackPanel>
+</Window>
