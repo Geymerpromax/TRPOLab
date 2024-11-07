@@ -13,25 +13,25 @@
             <StackPanel x:Name="buttonsStack" Orientation="Vertical">
 
                 <StackPanel x:Name="buttonsLineOne" Orientation="Horizontal">
-                    <Button x:Name="buttonOne" Content="1" Width="60" Height="60" BorderThickness="1,1,1,1" Margin="32,15,16,15" FontSize="36" Click="ButtonSMClick"/>
-                    <Button x:Name="buttonTwo" Content="2" Width="60" Height="60" BorderThickness="1,1,1,1" Margin="16,15,16,15" FontSize="36" Click="ButtonSMClick"/>
-                    <Button x:Name="buttonThree" Content="3" Width="60" Height="60" BorderThickness="1,1,1,1" Margin="15,15,15,15" FontSize="36" Click="ButtonSMClick"/>
+                    <Button x:Name="buttonOne" Content="1" Width="60" Height="60" BorderThickness="1,1,1,1" Margin="32,15,16,15" FontSize="36" Click="ButtonSMClick" Background="#FF576096" Foreground="White"/>
+                    <Button x:Name="buttonTwo" Content="2" Width="60" Height="60" BorderThickness="1,1,1,1" Margin="16,15,16,15" FontSize="36" Click="ButtonSMClick" Background="#FF576096" Foreground="White"/>
+                    <Button x:Name="buttonThree" Content="3" Width="60" Height="60" BorderThickness="1,1,1,1" Margin="15,15,15,15" FontSize="36" Click="ButtonSMClick" Background="#FF576096" Foreground="White"/>
                     <Button x:Name="buttonPlus" Content="+" Width="60" Height="60" BorderThickness="1,1,1,1" Margin="16,15,16,15" FontSize="36" Click="ButtonSMClick"/>
                 </StackPanel>
                 <StackPanel x:Name="buttonsLineTwo" Orientation="Horizontal">
-                    <Button x:Name="buttonFour" Content="4" Width="60" Height="60" BorderThickness="1,1,1,1" Margin="32,15,16,15" FontSize="36" Click="ButtonSMClick"/>
-                    <Button x:Name="buttonFive" Content="5" Width="60" Height="60" BorderThickness="1,1,1,1" Margin="16,15,16,15" FontSize="36" Click="ButtonSMClick"/>
-                    <Button x:Name="buttonSex" Content="6" Width="60" Height="60" BorderThickness="1,1,1,1" Margin="15,15,15,15" FontSize="36" Click="ButtonSMClick"/>
+                    <Button x:Name="buttonFour" Content="4" Width="60" Height="60" BorderThickness="1,1,1,1" Margin="32,15,16,15" FontSize="36" Click="ButtonSMClick" Background="#FF576096" Foreground="White"/>
+                    <Button x:Name="buttonFive" Content="5" Width="60" Height="60" BorderThickness="1,1,1,1" Margin="16,15,16,15" FontSize="36" Click="ButtonSMClick" Background="#FF576096" Foreground="White"/>
+                    <Button x:Name="buttonSex" Content="6" Width="60" Height="60" BorderThickness="1,1,1,1" Margin="15,15,15,15" FontSize="36" Click="ButtonSMClick" Background="#FF576096" Foreground="White"/>
                     <Button x:Name="buttonMinus" Content="-" Width="60" Height="60" BorderThickness="1,1,1,1" Margin="16,15,16,15" FontSize="36" Click="ButtonSMClick"/>
                 </StackPanel>
                 <StackPanel x:Name="buttonsLineThre" Orientation="Horizontal">
-                    <Button x:Name="buttonSeven" Content="7" Width="60" Height="60" BorderThickness="1,1,1,1" Margin="32,15,16,15" FontSize="36" Click="ButtonSMClick"/>
-                    <Button x:Name="buttonEight" Content="8" Width="60" Height="60" BorderThickness="1,1,1,1" Margin="16,15,16,15" FontSize="36" Click="ButtonSMClick"/>
-                    <Button x:Name="buttonNine" Content="9" Width="60" Height="60" BorderThickness="1,1,1,1" Margin="15,15,15,15" FontSize="36" Click="ButtonSMClick"/>
+                    <Button x:Name="buttonSeven" Content="7" Width="60" Height="60" BorderThickness="1,1,1,1" Margin="32,15,16,15" FontSize="36" Click="ButtonSMClick" Background="#FF576096" Foreground="White"/>
+                    <Button x:Name="buttonEight" Content="8" Width="60" Height="60" BorderThickness="1,1,1,1" Margin="16,15,16,15" FontSize="36" Click="ButtonSMClick" Background="#FF576096" Foreground="White"/>
+                    <Button x:Name="buttonNine" Content="9" Width="60" Height="60" BorderThickness="1,1,1,1" Margin="15,15,15,15" FontSize="36" Click="ButtonSMClick" Background="#FF576096" Foreground="White"/>
                     <Button x:Name="buttonUmn" Content="*" Width="60" Height="60" BorderThickness="1,1,1,1" Margin="16,15,16,15" FontSize="36" Click="ButtonSMClick"/>
                 </StackPanel>
                 <StackPanel x:Name="buttonsLineFour" Orientation="Horizontal">
-                    <Button x:Name="buttonNull" Content="0" Width="60" Height="60" BorderThickness="1,1,1,1" Margin="32,15,16,15" FontSize="36" Click="ButtonSMClick"/>
+                    <Button x:Name="buttonNull" Content="0" Width="60" Height="60" BorderThickness="1,1,1,1" Margin="32,15,16,15" FontSize="36" Click="ButtonSMClick" Background="#FF576096" Foreground="White"/>
                     <Button x:Name="buttonTCK" Content="." Width="60" Height="60" BorderThickness="1,1,1,1" Margin="16,15,16,15" FontSize="36" Click="ButtonSMClick"/>
                     <Button x:Name="buttonRavno" Content="=" Width="60" Height="60" BorderThickness="1,1,1,1" Margin="15,15,15,15" FontSize="36" Background="#FF22D524" Click="PrintResult"/>
                     <Button x:Name="buttonSlesh" Content="/" Width="60" Height="60" BorderThickness="1,1,1,1" Margin="16,15,16,15" FontSize="36" Click="ButtonSMClick"/>

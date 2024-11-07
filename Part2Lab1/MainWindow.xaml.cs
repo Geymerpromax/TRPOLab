@@ -92,6 +92,8 @@ namespace Lab2Ex1
             string startString = "";
             string endString = "";
 
+            
+            
             /////////////////////////// Замена факториала произведением            
             modifyString = ReFactorial(originalString, modifyString, startString, endString);
             originalString = modifyString;
@@ -110,7 +112,7 @@ namespace Lab2Ex1
                 string newString = modifyString.Replace(",", ".");
                 modifyString = newString;
             }
-
+            
             double result = Convert.ToDouble(new DataTable().Compute(modifyString, ""));
 
             miniWindow.Content = window.Content.ToString() + " = ";
@@ -133,7 +135,7 @@ namespace Lab2Ex1
             }
             for (int i = 0; i < countOfFactorial; i++)
             {
-
+                
                 //// Определяем позицию знака факториала
                 int positionFactorial = originalString.IndexOf('!');
 

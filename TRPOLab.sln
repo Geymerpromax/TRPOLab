@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab2Ex2", "Lab2Ex2\Lab2Ex2.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab2Ex3", "Lab2Ex3\Lab2Ex3.csproj", "{8779E1DF-CF99-4175-8860-4DDF138DD95F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab3Ex1", "..\test2\Lab3Ex1.csproj", "{4F4F16EA-57FB-41F0-84DF-78E477E68918}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab3", "..\test2\Lab3.csproj", "{4F4F16EA-57FB-41F0-84DF-78E477E68918}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
