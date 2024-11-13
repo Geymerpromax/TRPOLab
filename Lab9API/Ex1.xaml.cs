@@ -24,6 +24,8 @@ namespace Lab9API
             InitializeComponent();
             Ex2 ex2 = new Ex2();
             ex2.Show();
+            Window1 window1 = new Window1();
+            window1.Show();
         }
 
         // Асинхронный метод загрузки карты по URL

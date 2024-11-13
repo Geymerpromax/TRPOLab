@@ -1,0 +1,31 @@
+﻿<Window x:Class="Lab9API.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab9API"
+        mc:Ignorable="d"
+        Title="Window" Height="450" Width="800">
+    <Grid>
+        <!-- Кнопки для выполнения различных запросов -->
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Width="200" Margin="10">
+            <Button Content="Исторический музей" Click="ShowHistoricalMuseumInfo" Margin="5"/>
+            <Button Content="Федеральные округа" Click="ShowFederalDistricts" Margin="5"/>
+            <Button Content="Области городов" Click="ShowRegions" Margin="5"/>
+            <Button Content="Почтовый индекс МУР" Click="ShowPostalCode" Margin="5"/>
+            <Button Content="Спутник Австралии" Click="ShowAustraliaSatellite" Margin="5"/>
+            <Button Content="Стадионы Москвы" Click="ShowMoscowStadiums" Margin="5"/>
+            <Button Content="Маршрут судна" Click="ShowShipRoute" Margin="5"/>
+            <Button Content="Самый южный город" Click="FindSouthernmostCity" Margin="5"/>
+            <Button Content="Ближайшая станция метро" Click="FindNearestMetro" Margin="5"/>
+            <Button Content="Длина пути" Click="CalculatePathLength" Margin="5"/>
+        </StackPanel>
+
+        <!-- Панель вывода информации -->
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Width="550" Margin="10">
+            <TextBlock x:Name="ResultText" TextWrapping="Wrap" Margin="10" FontSize="14"/>
+            <Image x:Name="MapImage" Height="300" Stretch="Uniform" Margin="10"/>
+            <DataGrid x:Name="InfoDataGrid" AutoGenerateColumns="True" Margin="10" Visibility="Collapsed"/>
+        </StackPanel>
+    </Grid>
+</Window>
