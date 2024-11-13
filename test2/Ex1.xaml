@@ -1,4 +1,4 @@
-﻿<Window x:Class="test2.Ex1"
+﻿<Window x:Class="Lab3.Ex1"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,20 +6,20 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="2500" Width="1920">
 
-    <ScrollViewer VerticalScrollBarVisibility="Visible">
-        <StackPanel Orientation="Vertical">
+    <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible">
+        <StackPanel x:Name="global" Orientation="Vertical">
             <StackPanel x:Name="FirstString" Orientation="Horizontal">
                 <StackPanel x:Name="Ex1Stack" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Stretch">
                     <Label Content="1. Музык. и аним. новинки(Фильмы после 1997 года)"/>
                     <StackPanel Orientation="Horizontal"/>
                     <StackPanel Orientation="Horizontal"/>
                     <Button Content="Выполнить поиск фильмов" Width="166" HorizontalAlignment="Left" Height="25" Click="PrintFilmsIsYear" Margin="0,52,0,0"/>
-                    <Label x:Name="result" Content="" BorderThickness="1,1,1,1" BorderBrush="Black" Height="150" Width="437" HorizontalAlignment="Left" />
+                    <Label x:Name="result" Content="" BorderThickness="1,1,1,1" BorderBrush="Black" Height="150" Width="364" HorizontalAlignment="Left" />
                 </StackPanel>
                 <StackPanel x:Name="Ex2Stack" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Stretch">
                     <Label Content="2. Вопросы на конце (Выводит соотв. фильмы)"/>
                     <Button Content="Выполнить поиск фильмов" Width="161" HorizontalAlignment="Left" Height="25" Click="PrintFilmsWithVopros" Margin="0,52,0,0"/>
-                    <Label x:Name="result2" Content="" BorderThickness="1,1,1,1" BorderBrush="Black" Height="150" Width="418" HorizontalAlignment="Left" />
+                    <Label x:Name="result2" Content="" BorderThickness="1,1,1,1" BorderBrush="Black" Height="150" Width="398" HorizontalAlignment="Left" />
                 </StackPanel>
                 <StackPanel x:Name="Ex3Stack" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Stretch">
                     <Label Content="3. Важные года (Список фильмов с названием на Х, без повторов)"/>
@@ -101,20 +101,30 @@
                     <Label x:Name="result7" Content="" BorderThickness="1,1,1,1" BorderBrush="Black" Height="150" Width="416" HorizontalAlignment="Left" />
                 </StackPanel>
                 <StackPanel x:Name="Ex8Stack" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Stretch" Background="#FF03C0FF">
-                    <Label Content="8. Фильмы с 1960 до 2025"/>
+                    <Label Content="8. Старые детективы Фильмы с 1960 до 2025"/>
                     <Button Content="Выполнить поиск фильмов" Width="158" HorizontalAlignment="Left" Height="25" Click="PrintFilmIsYears" Margin="0,77,0,0"/>
                     <Label x:Name="result8" Content="" BorderThickness="1,1,1,1" BorderBrush="Black" Height="150" Width="416" HorizontalAlignment="Left" />
                 </StackPanel>
 
             </StackPanel>
             <StackPanel x:Name="ThirdString" Orientation="Horizontal" HorizontalAlignment="Left">
-                <StackPanel x:Name="Ex10" Orientation="Vertical" Background="#FF00FF84">
-                    <Label Content="10. Астерикс без Обеликса"/>
-                    <Button Content="Выполнить поиск фильмов" Width="189" HorizontalAlignment="Left" Height="25" Click="PrintFilmsAsterWithOutObel" Margin="0,52,0,0"/>
-                    <Label x:Name="result10" Content="" BorderThickness="1,1,1,1" BorderBrush="Black" Height="150" Width="418" HorizontalAlignment="Left" />
+                <StackPanel x:Name="Ex9" Orientation="Vertical" Background="#FFFF8ECC" Width="268">
+                    <Label Content="9. Популярные жанры (фильмы 2010 и 2011)"/>
+                    <Button Content="Выполнить поиск фильмов" Width="189" HorizontalAlignment="Left" Height="25" Click="PopularGenre" Margin="0,52,0,0"/>
+                    <Label x:Name="result9" Content="" BorderThickness="1,1,1,1" BorderBrush="Black" Height="150" Width="269" HorizontalAlignment="Left" />
                 </StackPanel>
-                <StackPanel x:Name="ex11" Background="#FF8800FF">
-                    <Label Content="11. Алфавитый указатель"/>
+                <StackPanel x:Name="Ex10" Orientation="Vertical" Background="#FF7A7BCC" Width="276">
+                    <Label Content="10. Короткие фильмы (длительность меньше 85)"/>
+                    <Button Content="Выполнить поиск фильмов" Width="189" HorizontalAlignment="Left" Height="25" Click="ShortFilm" Margin="0,52,0,0"/>
+                    <Label x:Name="result10" Content="" BorderThickness="1,1,1,1" BorderBrush="Black" Height="150" Width="276" HorizontalAlignment="Left" />
+                </StackPanel>
+                <StackPanel x:Name="Ex11" Orientation="Vertical" Background="#FF00FF84" Width="316">
+                    <Label Content="11. Астерикс без Обеликса"/>
+                    <Button Content="Выполнить поиск фильмов" Width="189" HorizontalAlignment="Left" Height="25" Click="PrintFilmsAsterWithOutObel" Margin="0,52,0,0"/>
+                    <Label x:Name="result11" Content="" BorderThickness="1,1,1,1" BorderBrush="Black" Height="150" Width="314" HorizontalAlignment="Left" />
+                </StackPanel>
+                <StackPanel x:Name="ex12" Background="#FF8800FF">
+                    <Label Content="12. Алфавитый указатель"/>
                     <StackPanel x:Name="alph" Orientation="Horizontal">
                         <Button Click="AllButtonClick" Content="А" Width="25" Height="25" Margin="2,2,2,2"/>
                         <Button Click="AllButtonClick" Content="Б" Width="25" Height="25" Margin="2,2,2,2"/>
@@ -163,7 +173,7 @@
                 </StackPanel>
             </StackPanel>
             <StackPanel x:Name="ForthString" Orientation="Horizontal">
-                <StackPanel x:Name="Lab8Ex1Stack" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Stretch">
+                <StackPanel x:Name="Lab8Ex1Stack" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Stretch" Background="Red">
                     <Label Content="8.1 Надоевшие комедии (делите олл)"/>
                     <StackPanel Orientation="Horizontal"/>
                     <StackPanel Orientation="Horizontal"/>
@@ -171,24 +181,24 @@
                     <Label x:Name="resultL8E1" Content="" BorderThickness="1,1,1,1" BorderBrush="Black" Height="150" Width="437" HorizontalAlignment="Left" />
                 </StackPanel>
                 <StackPanel x:Name="Lab8Ex2Stack" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Stretch">
-                    <Label Content="8.2. У любого фильма есть длинна"/>
+                    <Label Content="8.2. У любого фильма есть длинна (Если длинна 0 установить 42)"/>
                     <Button Content="Выполнить поиск фильмов" Width="180" HorizontalAlignment="Left" Height="25" Click="PrintNullFilms" Margin="0,52,0,0"/>
                     <Label x:Name="resultL8E2" Content="" BorderThickness="1,1,1,1" BorderBrush="Black" Height="150" Width="416" HorizontalAlignment="Left" />
                 </StackPanel>
                 <StackPanel x:Name="Lab8Ex3Stack" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Stretch">
-                    <Label Content="8.3. Длинные фантастические фильмы"/>
+                    <Label Content="8.3. Длинные фантастические фильмы (Увеличить длинну фантастики х2)"/>
                     <Button Content="Выполнить поиск фильмов" Width="180" HorizontalAlignment="Left" Height="25" Click="PrintFantastickFilms" Margin="0,52,0,0"/>
                     <Label x:Name="resultL8E3" Content="" BorderThickness="1,1,1,1" BorderBrush="Black" Height="150" Width="416" HorizontalAlignment="Left" />
                 </StackPanel>
                 <StackPanel x:Name="Lab8Ex4Stack" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Stretch">
-                    <Label Content="8.4. От Я до А"/>
+                    <Label Content="8.4. От Я до А (Удалить от я до а)"/>
                     <Button Content="Выполнить поиск фильмов" Width="180" HorizontalAlignment="Left" Height="25" Click="PrintIsDeleteAYA" Margin="0,52,0,0"/>
                     <Label x:Name="resultL8E4" Content="" BorderThickness="1,1,1,1" BorderBrush="Black" Height="150" Width="416" HorizontalAlignment="Left" />
                 </StackPanel>
             </StackPanel>
             <StackPanel x:Name="FivesthString" Orientation="Horizontal">
                 <StackPanel x:Name="Lab8Ex5Stack" Orientation="Vertical" VerticalAlignment="Stretch" Height="252" Width="436">
-                    <Label Content="8.5 Генерация фильмов"/>
+                    <Label Content="8.5 Генерация фильмов (Введи ид фильма)"/>
 
                     <StackPanel x:Name="menage" Orientation="Horizontal">
                         <TextBox x:Name="idInput" Width="114" Height="48"/>
@@ -209,7 +219,7 @@
                     </StackPanel>
 
                 </StackPanel>
-                <StackPanel x:Name="Lab8Ex6Stack" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Stretch">
+                <StackPanel x:Name="Lab8Ex6Stack" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Stretch" Background="#FFFF0009">
                     <Label Content="8.6. Слишком длинные боевики (удалить больше 90мин)"/>
                     <Button Content="Выполнить поиск фильмов" Width="180" HorizontalAlignment="Left" Height="25" Click="PrintIsDeleteBOEVIK" Margin="0,52,0,0"/>
                     <Label x:Name="resultL8E6" Content="" BorderThickness="1,1,1,1" BorderBrush="Black" Height="150" Width="416" HorizontalAlignment="Left" />
@@ -220,34 +230,33 @@
                     <Label x:Name="resultL8E7" Content="" BorderThickness="1,1,1,1" BorderBrush="Black" Height="150" Width="416" HorizontalAlignment="Left" />
                 </StackPanel>
                 <StackPanel x:Name="Lab8Ex8Stack" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Stretch">
-                    <Label Content="8.8. Укорачиванием старые фильмы"/>
+                    <Label Content="8.8. Укорачиванием старые фильмы (если фильм 1973 поделить длительность на 3)"/>
                     <Button Content="Выполнить поиск фильмов" Width="180" HorizontalAlignment="Left" Height="25" Click="PrintShoortingFilm" Margin="0,52,0,0"/>
                     <Label x:Name="resultL8E8" Content="" BorderThickness="1,1,1,1" BorderBrush="Black" Height="150" Width="416" HorizontalAlignment="Left" />
                 </StackPanel>
             </StackPanel>
             <StackPanel x:Name="SixthString" Orientation="Horizontal">
-                <StackPanel x:Name="Lab8Ex9Stack" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Stretch" Background="#FFA400FF">
+                <StackPanel x:Name="Lab8Ex9Stack" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFA400FF" Width="416" Height="252">
                     <Label Content="8.9. Длинная старая фантастика(Делит)"/>
                     <Button Content="Длинная старая фантастика" Width="180" HorizontalAlignment="Left" Height="25" Margin="0,52,0,0"/>
                     <Label x:Name="resultL8E9" Content="" BorderThickness="1,1,1,1" BorderBrush="Black" Height="150" Width="416" HorizontalAlignment="Left" />
                 </StackPanel>
-                <StackPanel x:Name="Lab8Ex10AnD11Stack" Orientation="Vertical" VerticalAlignment="Stretch" Height="252">
+                <StackPanel x:Name="Lab8Ex10AnD11Stack" Orientation="Vertical" VerticalAlignment="Stretch" Height="513">
                     <Label Content="8.10 и 8.11 Фильмотека"/>
-
                     <StackPanel x:Name="manage" Orientation="Horizontal">
                         <Button Content="Добавить запись" FontSize="18" Click="AddFilm" Height="30" Margin="5,5,5,5"/>
-                        <Button Content="Удалить выбранное" FontSize="18" Height="30"/>
+                        <Button Content="Удалить выбранное" FontSize="18" Height="30" Click="BtnDeleteClick"/>
 
                     </StackPanel>
                     <StackPanel x:Name="titleTable2" Orientation="Horizontal" HorizontalAlignment="Left">
-                        <Label Width="50" Height="50" Content="#" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,0,1"/>
-                        <Label Width="50" Height="50" Content="id" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,0,1"/>
-                        <Label Height="50" Content="name" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,0,1" Width="320"/>
-                        <Label Height="50" Content="year" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,0,1" Width="80"/>
-                        <Label Height="50" Content="genre" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,0,1" Width="135"/>
-                        <Label Height="50" Content="duration" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Width="110"/>
-                        <Label Height="50" Content="changed" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Width="110"/>
-                        <Label Height="50" Content="choice" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,1" Width="110"/>
+                        <Label Width="50" Height="50" Content="#" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,0,0"/>
+                        <Label Width="50" Height="50" Content="id" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,0,0"/>
+                        <Label Height="50" Content="name" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,0,0" Width="320"/>
+                        <Label Height="50" Content="year" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,0,0" Width="80"/>
+                        <Label Height="50" Content="genre" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,0,0" Width="135"/>
+                        <Label Height="50" Content="duration" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="1,1,1,0" Width="110"/>
+                        <Label Height="50" Content="changed" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="0,1,1,0" Width="110"/>
+                        <Label Height="50" Content="choice" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black" BorderThickness="0,1,1,1" Width="110"/>
 
                     </StackPanel>
                     <StackPanel x:Name="resluting2">

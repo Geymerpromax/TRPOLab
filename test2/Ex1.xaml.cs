@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using Microsoft.Data.Sqlite;
 
-namespace test2
+namespace Lab3
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -14,6 +15,9 @@ namespace test2
    
     public partial class Ex1 : Window
     {
+        static List<StackPanel> stackPanels = new List<StackPanel>();
+
+
         public bool check1Table = false;
         public bool check2Table = false;
         public bool check3Table = false;
@@ -41,13 +45,16 @@ namespace test2
             dbName = "DB.db";
             db2Name = "DB2.db";
 
-            filmsCollection.Add(new Film("А вдруг это любовь?", "1961", "Триллер", "90", 1));
-            filmsCollection.Add(new Film("Человек паук", "1959", "Триллер", "26", 2));
-            filmsCollection.Add(new Film("Хоровод", "1952", "Комедия", "78", 3));
+            filmsCollection.Add(new Film("А вдруг это любовь?", "1961", "Мюзикл", "180", 1));
+            filmsCollection.Add(new Film("Человек паук", "1959", "фантастика", "160", 2));
+            filmsCollection.Add(new Film("Хоровод", "1952", "Комедия", "", 3));
 
-            filmsCollection.Add(new Film("Астерикс один", "2024", "Хоррор", "120", 4));
+            filmsCollection.Add(new Film("Астерикс один", "2024", "Триллер", "120", 4));
             filmsCollection.Add(new Film("Обеликс один", "1952", "Комедия", "140", 5));
-            filmsCollection.Add(new Film("Астерикс и Обеликс", "1952", "Комедия", "140", 6));
+            filmsCollection.Add(new Film("Астерикс и Обеликс", "2010", "Комедия", "60", 6));
+
+            filmsCollection.Add(new Film("Я и банана", "1973", "Боевик", "140", 6));
+
 
             musicTrackCollection.Add(new MusicTrack("Роскомсвобода", "2024", "Хип-хоп", "3", 1));
             musicTrackCollection.Add(new MusicTrack("Демонтажник", "2023", "Рэп", "2,50", 2));
@@ -87,8 +94,113 @@ namespace test2
                 CreateMusicTrackTableContent(db2Name, table2Name, musicTrackCollection);
             }
 
+            //NormaldakiFormat();
+
             LoadFilmsToTable();
+
+            //ComboBox comboBox = new ComboBox { Width = 100, HorizontalAlignment = HorizontalAlignment.Left };
+
+            //for (int i = 1; i <= 12; i++)
+            //{
+            //    comboBox.Items.Add($"7.{i}");
+            //}
+
+            //for (int i = 1; i <= 10; i++)
+            //{
+            //    comboBox.Items.Add($"8.{i}");
+            //}
+
+            //FirstString.Children.Remove(Ex1Stack);
+            //stackPanels.Add(Ex1Stack);
+            //FirstString.Children.Remove(Ex2Stack);
+            //stackPanels.Add(Ex2Stack);
+            //FirstString.Children.Remove(Ex3Stack);
+            //stackPanels.Add(Ex3Stack);
+            //FirstString.Children.Remove(Ex4Stack);
+            //stackPanels.Add(Ex4Stack);
+
+
+            //SecondString.Children.Remove(Ex5);
+            //stackPanels.Add(Ex5);
+            //SecondString.Children.Remove(Ex6);
+            //stackPanels.Add(Ex6);
+            //SecondString.Children.Remove(Ex7Stack);
+            //stackPanels.Add(Ex7Stack);
+            //SecondString.Children.Remove(Ex8Stack);
+            //stackPanels.Add(Ex8Stack);
+
+
+            //ThirdString.Children.Remove(Ex9);
+            //stackPanels.Add(Ex9);
+            //ThirdString.Children.Remove(Ex10);
+            //stackPanels.Add(Ex10);
+            //ThirdString.Children.Remove(Ex11);
+            //stackPanels.Add(Ex11);
+            //ThirdString.Children.Remove(ex12);
+            //stackPanels.Add(ex12);
+
+
+            //ForthString.Children.Remove(Lab8Ex1Stack);
+            //stackPanels.Add(Lab8Ex1Stack);
+            //ForthString.Children.Remove(Lab8Ex2Stack);
+            //stackPanels.Add(Lab8Ex2Stack);
+            //ForthString.Children.Remove(Lab8Ex3Stack);
+            //stackPanels.Add(Lab8Ex3Stack);
+            //ForthString.Children.Remove(Lab8Ex4Stack);
+            //stackPanels.Add(Lab8Ex4Stack);
+
+
+            //FivesthString.Children.Remove(Lab8Ex5Stack);
+            //stackPanels.Add(Lab8Ex5Stack);
+            //FivesthString.Children.Remove(Lab8Ex6Stack);
+            //stackPanels.Add(Lab8Ex6Stack);
+            //FivesthString.Children.Remove(Lab8Ex6Stack);
+            //stackPanels.Add(Lab8Ex6Stack);
+            //FivesthString.Children.Remove(Lab8Ex7Stack);
+            //stackPanels.Add(Lab8Ex7Stack);
+
+
+            //SixthString.Children.Remove(Lab8Ex8Stack);
+            //stackPanels.Add(Lab8Ex8Stack);
+            //SixthString.Children.Remove(Lab8Ex9Stack);
+            //stackPanels.Add(Lab8Ex9Stack);
+            //SixthString.Children.Remove(Lab8Ex10AnD11Stack);
+            //stackPanels.Add(Lab8Ex10AnD11Stack);
+
+            //comboBox.SelectionChanged += LoadForm;
+            //global.Children.Add(comboBox);
         }      
+        public void LoadForm(object sender, RoutedEventArgs e)
+        {           
+            int index = ((ComboBox)sender).SelectedIndex;
+            stackPanels.RemoveAt(index);
+            global.Children.Add(stackPanels[index]);
+            if (index > 0)
+            {
+                global.Children.RemoveAt(index);
+            }
+        }
+        private void NormaldakiFormat()
+        {
+            FirstString.Visibility = Visibility.Collapsed;
+            FirstString.IsEnabled = false;
+
+            SecondString.IsEnabled = false;
+            SecondString.Visibility = Visibility.Collapsed;
+
+            ThirdString.IsEnabled = false;
+            ThirdString.Visibility = Visibility.Collapsed;
+
+
+            ForthString.IsEnabled = false;
+            ForthString.Visibility = Visibility.Collapsed;
+
+            FivesthString.IsEnabled = false;
+            FivesthString.Visibility = Visibility.Collapsed;
+
+            SixthString.IsEnabled = false;
+            SixthString.Visibility = Visibility.Collapsed;           
+        }
         private void TableIsExists1(string dataBaseName, string tableName)
         {          
             bool tableExists = false;
@@ -444,11 +556,11 @@ namespace test2
         {
             foreach (var film in GetAllContentWithFilmsFormat(dbName, tableName))
             {
-                if (Convert.ToInt32(film.Duration) > 60)
+                if (int.TryParse(film.Duration, out int res) && Convert.ToInt32(film.Duration) > 60)
                 {
                     if (!result4.Content.ToString().Contains(film.Name))
                     {
-                        result4.Content += film.Name + "\n";
+                        result4.Content += "Название: " + film.Name + " | Длительность: " + film.Duration + "\n";
                     }                   
                 }                              
             }
@@ -564,9 +676,9 @@ namespace test2
                     }
                     else
                     {
-                        if (!result10.Content.ToString().Contains(film))
+                        if (!result11.Content.ToString().Contains(film))
                         {
-                            result10.Content += film + "\n";
+                            result11.Content += film + "\n";
                         }
                     }
                 }
@@ -612,6 +724,7 @@ namespace test2
         }
         private void PrintMusicTracksIsArtist(object sender, RoutedEventArgs e)
         {
+            result7.Content = "";
             List<string> musics = new List<string>();
             foreach (var artist in artistsCollection)
             {
@@ -637,7 +750,7 @@ namespace test2
             }
             foreach (var music in musics)
             {
-                result7.Content += music;
+                result7.Content += music + "\n";
             }
             if (result7.Content.ToString() == "")
             {
@@ -677,11 +790,10 @@ namespace test2
             
         }
         private void PrintNullFilms(object sender, RoutedEventArgs e)
-        {
-            
+        {           
             foreach (var film in GetAllContentWithFilmsFormat(dbName, tableName))
             {
-                if (film.Duration == null || film.Duration == "0")
+                if (film.Duration == null || film.Duration == "0" || film.Duration == "" || film.Duration == " ")
                 {
                     using (var connection = new SqliteConnection($"Data Source={dbName}"))
                     {
@@ -689,18 +801,13 @@ namespace test2
                         SqliteCommand command = new SqliteCommand();
                         command.Connection = connection;
 
-                        command.CommandText = $"UPDATE {tableName} SET duration ='42' WHERE id = '{film.Id}')";
+                        command.CommandText = $"UPDATE {tableName} SET duration ='42' WHERE id = '{film.Id}'";
                         command.ExecuteNonQuery();
 
                         connection.Close();
                     }
                     MessageBox.Show("Данные обновлены");
-                }
-                else
-                {
-                    MessageBox.Show("Данные для  обновления не найдены");
-                }
-
+                }               
             }
             foreach (var film in GetAllContentFromTable(dbName, tableName))
             {
@@ -712,7 +819,7 @@ namespace test2
         {
             foreach (var film in GetAllContentWithFilmsFormat(dbName, tableName))
             {
-                if (film.Genre == "Фантастика")
+                if (film.Genre == "фантастика")
                 {
                     using (var connection = new SqliteConnection($"Data Source={dbName}"))
                     {
@@ -720,29 +827,27 @@ namespace test2
                         SqliteCommand command = new SqliteCommand();
                         command.Connection = connection;
 
-                        command.CommandText = $"UPDATE {tableName} SET duration ='{Convert.ToInt32(film.Duration) * 2}' WHERE id = '{film.Id}' AND genre = 'Фантастика')";
+                        command.CommandText = $"UPDATE {tableName} SET duration ='{Convert.ToInt32(film.Duration) * 2}' WHERE id = '{film.Id}' AND genre = 'фантастика'";
                         command.ExecuteNonQuery();
 
                         connection.Close();
                     }
                     MessageBox.Show("Данные обновлены");
-                }
-                else
-                {
-                    MessageBox.Show("Данные для  обновления не найдены");
-                }
-
+                }              
             }
-            foreach (var film in GetAllContentFromTable(dbName, tableName))
+            foreach (var film in GetAllContentWithFilmsFormat(dbName, tableName))
             {
-                resultL8E3.Content += film + "\n";
+                if (film.Genre == "фантастика")
+                {
+                    resultL8E3.Content += "Название " + film.Name + " Длительность " + film.Duration + "\n";
+                }
             }
         }
         private void PrintIsDeleteAYA(object sender, RoutedEventArgs e)
         {
             foreach (var film in GetAllContentWithFilmsFormat(dbName, tableName))
             {
-                if (film.Name[0] == 'Я' || film.Name[Name.Length - 1] == 'А')
+                if (film.Name[0] == 'Я' || film.Name[Name.Length] == 'А')
                 {
                     using (var connection = new SqliteConnection($"Data Source={dbName}"))
                     {
@@ -757,20 +862,16 @@ namespace test2
                     }
                 }
             }         
-            MessageBox.Show("Записи удалены.");
             foreach (var film in GetAllContentFromTable(dbName, tableName))
-            {              
-                
-                resultL8E4.Content += film + "\n";
-                
+            {                              
+                resultL8E4.Content += film + "\n";               
             }
-
         }
         private void PrintIsDeleteBOEVIK(object sender, RoutedEventArgs e)
         {
             foreach (var film in GetAllContentWithFilmsFormat(dbName, tableName))
             {
-                if (Convert.ToInt32(film.Duration) >= 90)
+                if (int.TryParse(film.Duration, out int res) && Convert.ToInt32(film.Duration) >= 90)
                 {
                     using (var connection = new SqliteConnection($"Data Source={dbName}"))
                     {
@@ -783,13 +884,8 @@ namespace test2
                         command.ExecuteNonQuery();
                         connection.Close();
                     }
-                    MessageBox.Show("Записи удалены.");
-                }
-                else
-                {
-                    MessageBox.Show("Записи для удаления не найдены.");
-
-                }
+                   
+                }               
             }
            
             foreach (var film in GetAllContentFromTable(dbName, tableName))
@@ -812,17 +908,13 @@ namespace test2
                         SqliteCommand command = new SqliteCommand();
                         command.Connection = connection;
 
-                        command.CommandText = $"UPDATE {tableName} SET duration ='{100}' WHERE id = '{film.Id}' AND genre = 'Мюзикл')";
+                        command.CommandText = $"UPDATE {tableName} SET duration ='{100}' WHERE id = '{film.Id}' AND genre = 'Мюзикл'";
                         command.ExecuteNonQuery();
 
                         connection.Close();
                     }
-                    MessageBox.Show("Данные обновлены");
                 }
-                else
-                {
-                    MessageBox.Show("Данные для  обновления не найдены");
-                }
+         
 
             }
             foreach (var film in GetAllContentFromTable(dbName, tableName))
@@ -842,7 +934,7 @@ namespace test2
                         SqliteCommand command = new SqliteCommand();
                         command.Connection = connection;
 
-                        command.CommandText = $"UPDATE {tableName} SET duration ='{Convert.ToInt32(film.Duration) / 3}' WHERE id = '{film.Id}')";
+                        command.CommandText = $"UPDATE {tableName} SET duration ='{Convert.ToInt32(film.Duration) / 3}' WHERE id = '{film.Id}'";
                         command.ExecuteNonQuery();
 
                         connection.Close();
@@ -890,7 +982,6 @@ namespace test2
                 resultL8E9.Content += film + "\n";
             }
         }
-
         private void PrintFilm(object sender, RoutedEventArgs e)
         {
             resluting.Children.Clear();
@@ -910,7 +1001,6 @@ namespace test2
             }
            
         }
-
         private void ChangeFilm(object sender, RoutedEventArgs e)
         {
             foreach(StackPanel stack in resluting.Children)
@@ -957,6 +1047,7 @@ namespace test2
         }     
         private void LoadFilmsToTable()
         {
+            resluting2.Children.Clear();
             int counter = 1;
             foreach (var film in GetAllContentWithFilmsFormat(dbName, tableName))
             {              
@@ -1028,8 +1119,9 @@ namespace test2
                     HorizontalContentAlignment = ((Label)titleTable2.Children[6]).HorizontalContentAlignment,
                     VerticalContentAlignment = ((Label)titleTable2.Children[6]).VerticalContentAlignment,
                     BorderBrush = ((Label)titleTable2.Children[6]).BorderBrush,
-                    BorderThickness = ((Label)titleTable2.Children[6]).BorderThickness
+                    BorderThickness = ((Label)titleTable2.Children[6]).BorderThickness,                    
                 };
+                buttonChanged.Click += BtnChangeClick;
                 CheckBox checkBox = new CheckBox
                 {
                     Width = ((Label)titleTable2.Children[7]).Width,
@@ -1049,13 +1141,78 @@ namespace test2
         private void BtnChangeClick(object sender, EventArgs e)
         {
             StackPanel parentStack = ((Button)sender).Parent as StackPanel;
-
-            
-
+            App.idFilmsForApdate = Convert.ToInt32(((Label)parentStack.Children[1]).Content.ToString());
+            DialogWindowChanged dialogWindowChanged = new DialogWindowChanged();
+            dialogWindowChanged.ShowDialog();
+            LoadFilmsToTable();
         }
         private void AddFilm(object sender, RoutedEventArgs e)
         {
-           
+            DialogWindowAdd dialogWindowAdd = new DialogWindowAdd();
+            dialogWindowAdd.ShowDialog();
+            LoadFilmsToTable();
+        }
+        private void BtnDeleteClick(object sender, EventArgs e)
+        {
+            string deleted = "";
+
+            StackPanel parentStack = ((Button)sender).Parent as StackPanel;
+            foreach (StackPanel stackPanel in resluting2.Children)
+            {
+                if (((CheckBox)stackPanel.Children[7]).IsChecked == true)
+                {
+
+                    using (var connection = new SqliteConnection($"Data Source={dbName}"))
+                    {
+                        connection.Open();
+                        SqliteCommand command = new SqliteCommand();
+                        command.Connection = connection;
+                        command.CommandText = $"DELETE FROM {tableName} WHERE id = {((Label)stackPanel.Children[1]).Content.ToString()}";
+                        command.ExecuteNonQuery();
+                        connection.Close();
+                        stackPanel.Children.RemoveAt(7);
+
+                    }
+                    deleted += ((Label)stackPanel.Children[2]).Content.ToString() + "\n";
+                }          
+            }
+            if (deleted == "")
+            {
+                MessageBox.Show($"Данные для удаления не выбраны");
+            }
+            else
+            {
+                MessageBox.Show($"Были удалены следующие фильмы:\n{deleted}Таблица будет обновлена");
+                LoadFilmsToTable();
+            }         
+        }
+      
+        private void ShortFilm(object sender, RoutedEventArgs e)
+        {
+            foreach (var film in GetAllContentWithFilmsFormat(dbName, tableName))
+            {
+                if (int.TryParse(film.Duration, out int res) && Convert.ToInt32(film.Duration) <=  85)
+                {
+                    if (!result10.Content.ToString().Contains(film.Name + " " + film.Year + " " + film.Genre))
+                    {
+                        result10.Content += film.Name + " " + film.Year + " " + film.Genre + " " + film.Duration + "\n";
+                    }
+                }
+            }
+        }
+
+        private void PopularGenre(object sender, RoutedEventArgs e)
+        {
+            foreach (var film in GetAllContentWithFilmsFormat(dbName, tableName))
+            {
+                if (Convert.ToInt32(film.Year) == 2010 || Convert.ToInt32(film.Year) == 2011)
+                {
+                    if (!result9.Content.ToString().Contains(film.Name + " " + film.Year + " " + film.Genre))
+                    {
+                        result9.Content += film.Name + " " + film.Year + " " + film.Genre + "\n";
+                    }
+                }
+            }
         }
     }
 }

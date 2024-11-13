@@ -1,14 +1,13 @@
-﻿<Window x:Class="Lab3.DialogWindowChanged"
+﻿<Window x:Class="Lab3.DialogWindowAdd"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Lab3"
       mc:Ignorable="d" 
-      Title="Изменить запись" Height="245" Width="300" ResizeMode="NoResize">
+      Title="Добавить запись" Height="212" Width="300" ResizeMode="NoResize">
 
     <StackPanel Background="White" Margin="0,0,0,-16">
-        <Label Content="Заполните поля, которые хотите обновить"/>
         <StackPanel Orientation="Horizontal" Margin="5,10,0,10">
             <Label Content="Название"/>
             <TextBox x:Name="name" Width="135" Margin="15,0,0,0"/>
@@ -25,6 +24,6 @@
             <Label Content="Длинна"/>
             <TextBox x:Name="duration" Width="135" Margin="26,0,0,0"/>
         </StackPanel>
-        <Button Content="Изменить" Width="74" Click="ChangeFilm"/>
+        <Button Content="Добавить" Width="74" Click="AddFilm"/>
     </StackPanel>
 </Window>

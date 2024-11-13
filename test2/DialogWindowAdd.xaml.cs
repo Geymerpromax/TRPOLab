@@ -13,26 +13,25 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Xml.Linq;
 
 namespace Lab3
 {
     /// <summary>
     /// Логика взаимодействия для Ex2.xaml
     /// </summary>
-    public partial class DialogWindowChanged : Window
+    public partial class DialogWindowAdd : Window
     {
-        public DialogWindowChanged()
+        public DialogWindowAdd()
         {
             InitializeComponent();
         }
 
-        private void ChangeFilm(object sender, RoutedEventArgs e)
+        private void AddFilm(object sender, RoutedEventArgs e)
         {
             if (name.Text.Replace(" ", "") == "" || year.Text.Replace(" ", "") == "" || genre.Text.Replace(" ", "") == "" || duration.Text.Replace(" ", "") == "")
             {
                 MessageBox.Show("Данные ввведены неверно, попробуйте ещё раз");
-                return;
+                return;            
             }
             else
             {
@@ -41,24 +40,14 @@ namespace Lab3
                     connection.Open();
                     SqliteCommand command = new SqliteCommand();
                     command.Connection = connection;
-                    //// Дописать SET изходя из задания
-                    command.CommandText = $"UPDATE films SET " +
-                        $"title = '{name.Text}', " +
-                        $"year = '{year.Text}', " +
-                        $"genre = '{genre.Text}', " +
-                        $"duration = '{duration.Text}' " +
-                        $"WHERE id = '{App.idFilmsForApdate}'";
+                    command.CommandText = $"INSERT INTO films (title, year, genre, duration) VALUES ('{name.Text}', '{year.Text}', '{genre.Text}', '{duration.Text}')";
                     command.ExecuteNonQuery();
-
                     connection.Close();
-                    MessageBox.Show("Данные обновлены");
                 }
-                MessageBox.Show("Запись обновлена, таблица будет обновлена");
+                MessageBox.Show("Запись добавлена, таблица будет обновлена");
 
-                App.idFilmsForApdate = new int();
             }
             Close();
-
         }
     }
 }
